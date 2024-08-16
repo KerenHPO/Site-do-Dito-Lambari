@@ -15,9 +15,9 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Home</a></li>
-                <li><a href="Cardapio.html">Cardápio</a></li>
+                <li><a href="#Cardapio">Cardápio</a></li>
                 <li><a href="#pedido">Pedido</a></li>
-                <li><a href="Sobre.html">Sobre Nós</a></li>
+                <li><a href="#Sobre">Sobre Nós</a></li>
                 <li><a href="#contato">Contato</a></li>
                 
             </ul>
@@ -31,44 +31,29 @@
         </div>
     </section>
 
-    <section class="cardapio">
-        <h2>Cardápio</h2>
-        <div class="pratos">
-            <div class="prato">
-                <img src="arroz.png" alt="Arroz maria isabel">
-                <h3>Arroz maria isabel</h3>
-                <p>Maria Isabel é um prato típico da culinária cuiabana, que consiste em uma saborosa mistura de arroz e carne de sol cortada em cubos.</p>
+    <section id="Cardapio" class="cardapio">
+        <h2>Nosso Cardápio</h2>
+        <div class="pratos-container">
+            <button class="nav left-nav">&lt;</button>
+            <div class="pratos">
+                <div class="prato">
+                    <img src="arroz.png" alt="Maria Isabel">
+                    <h3>Maria Isabel</h3>
+                    <p>Arroz com carne de sol desfiada, acompanhado de farofa de banana e feijão de corda. R$ 25,00</p>
+                    <button class="add-to-cart" data-name="Maria Isabel" data-price="25.00">Adicionar ao Carrinho</button>
+                </div>
+                <!-- Mais pratos -->
+                <div class="prato">
+                    <img src="mojica.png" alt="mojica de pintado">
+                    <h3>mojica de pintado</h3>
+                    <p>A mojica de pintado é um cozido de pintado cortado em cubos com um caldo engrossado por mandioca. R$ 30,00</p>
+                    <button class="add-to-cart" data-name="Prato 2" data-price="30.00">Adicionar ao Carrinho</button>
+                </div>
+                <!-- Adicione quantos pratos quiser -->
             </div>
-            <div class="prato">
-                <img src="mojica.png" alt="mojica de pintado ">
-                <h3>Mojica de pintado </h3>
-                <p>A mojica de pintado é um cozido de pintado cortado em cubos com um caldo engrossado por mandioca.</p>
-            </div>
-            <!-- Adicione mais pratos conforme necessário -->
+            <button class="nav right-nav">&gt;</button>
         </div>
-    </section>
-    <section id="pedido" class="pedidos">
-        <h2>Faça seu Pedido</h2>
-    
-        <div class="menu">
-            <h3>Cardápio</h3>
-            <div class="item">
-                <h4>Maria Isabel</h4>
-                <p>Arroz com carne de sol desfiada, acompanhado de farofa de banana e feijão de corda. R$ 25,00</p>
-                <button class="add-to-cart" data-name="Maria Isabel" data-price="25.00">Adicionar ao Carrinho</button>
-            </div>
-            <!-- Adicionar mais itens do cardápio conforme necessário -->
-        </div>
-    
-        <div class="carrinho">
-            <h3>Seu Carrinho</h3>
-            <ul id="cart-items">
-                <!-- Itens do carrinho serão adicionados aqui -->
-            </ul>
-            <p>Total: R$ <span id="total-price">0.00</span></p>
-            <button id="checkout">Finalizar Pedido</button>
-        </div>
-    </section>
+    </section>    
     
     <section id="contato" class="rodape">
         <h3>Contato</h3>

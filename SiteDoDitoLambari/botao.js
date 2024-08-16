@@ -44,3 +44,18 @@ addToCartButtons.forEach(button => {
         addToCart(name, price);
     });
 });
+
+// Navegação com seta
+document.querySelector('.left-nav').addEventListener('click', function() {
+    document.querySelector('.pratos').scrollBy({
+        left: -250,
+        behavior: 'smooth'
+    });
+});
+
+document.querySelector('.right-nav').addEventListener('click', function() {
+    document.querySelector('.pratos').scrollBy({
+        left: 250,
+        behavior: 'smooth'
+    });
+});
