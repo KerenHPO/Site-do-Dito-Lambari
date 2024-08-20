@@ -3,10 +3,13 @@ let cart = [];
 
 // Função para adicionar itens ao carrinho
 function addToCart(name, price) {
-    // Adiciona o item ao array do carrinho
-    cart.push({ name, price });
-
-    // Atualiza a exibição do carrinho
+    // Verifica se o item já está no carrinho
+    let existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
     updateCartDisplay();
 }
 
@@ -24,16 +27,29 @@ function updateCartDisplay() {
     // Adiciona cada item do carrinho ao elemento de exibição
     cart.forEach(item => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${item.name} - R$ ${item.price.toFixed(2)}`;
+        listItem.textContent = `${item.name} x${item.quantity} - R$ ${(item.price * item.quantity).toFixed(2)}`;
         cartItemsContainer.appendChild(listItem);
 
         // Calcula o preço total
-        totalPrice += item.price;
+        totalPrice += item.price * item.quantity;
     });
 
     // Atualiza o preço total
-    totalPriceElement.textContent = totalPrice.toFixed(2);
+    totalPriceElement.textContent = `Total: R$ ${totalPrice.toFixed(2)}`;
+
+    // Armazena o valor total no localStorage
+    localStorage.setItem('totalPrice', totalPrice.toFixed(2));
 }
+
+// Adiciona um evento de clique ao botão de "Finalizar Pedido"
+document.getElementById('checkout').addEventListener('click', () => {
+    if (cart.length > 0) {
+        window.location.href = 'pedido.html';
+    } else {
+        alert('O carrinho está vazio!');
+    }
+});
+
 
 // Adiciona um evento de clique a todos os botões de "Adicionar ao Carrinho"
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -41,9 +57,27 @@ addToCartButtons.forEach(button => {
     button.addEventListener('click', function() {
         const name = this.getAttribute('data-name');
         const price = parseFloat(this.getAttribute('data-price'));
-        addToCart(name, price);
+        addToCart(name, price); // Adiciona o item ao carrinho
     });
 });
+
+// Função para limpar o carrinho
+document.getElementById("clear-cart").addEventListener("click", function() {
+    // Limpa o array do carrinho
+    cart = [];
+
+    // Limpa a exibição dos itens no carrinho
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    // Zera o valor total
+    document.getElementById("total-price").textContent = `Total: R$ 0.00`;
+
+    // Remove o valor total do localStorage (opcional)
+    localStorage.removeItem('totalPrice');
+});
+
+
 
 // Navegação com seta
 document.querySelector('.left-nav').addEventListener('click', function() {

@@ -1,28 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dito Lambari - Pratos Cuiabanos</title>
-    <link rel="stylesheet" href="Estilo.css">
-</head>
-<body>
-    <header class="topo">
-        <div class="logo">
-            <img src="log.png" alt="logo Dito Lambari" height="100px" width="">
-            <p>Pratos Cuiabanos de Excelência</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="InicioDitoLambari.html">Home</a></li>
-                <li><a href="Cardapio.html">Cardápio</a></li>
-                <li><a href="Pedido.html">Pedido</a></li>
-                <li><a href="Sobre.html">Sobre Nós</a></li>
-                <li><a href="Contato.html">Contato</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página de Pagamento - Dito Lambari</title>
+        <link rel="stylesheet" href="Estilo.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="logDito.png" type="image/x-icon">
+    </head>
+    
+    <body class="pagina-pagamento">
 
-</body>
+        <header id="inicio" class="topo">
+            <nav class="navbar navbar-expand-lg navbar-customizado">
+                <div class="container-fluid">
+                    <!-- Logo à esquerda -->
+                    <a class="navbar-brand" href=""><img src="logDito.png" alt="logotipo" height="100px" width="">
+                        Pratos Cuiabanos de Excelência</a>
+    
+                    <!-- Botão de menu para telas pequenas -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <!-- Links do cabeçalho alinhados à direita -->
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav mb-2 mb-lg-0 d-none d-lg-flex">
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="InicioDitoLambari.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="InicioDitoLambari.html">Cardápio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sobreNos.html">Sobre Nós</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contato">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    
+            <!-- Offcanvas para links em telas pequenas -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header navbar-customizado">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body navbar-customizado">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="InicioDitoLambari.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="InicioDitoLambari.html">Cardápio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobreNos.html">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        
+        <section class="pedido">
+            <div class="container payment-section">
+                <h2>Escolha a Forma de Pagamento</h2>
+                <p id="total-amount"></p>
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="pix-btn">PIX</button>
+                    <button class="btn btn-primary" id="card-btn">Cartão de Crédito/Débito</button>
+                    <button class=" btn-primary modal-footer" id="clear-cart"><a class="nav-link" href="InicioDitoLambari.html">Cancelar</a></button>
+                </div>
+                <div id="pix-info" class="hidden">
+                    <h3>Pagamento via PIX</h3>
+                    <div id="qrcode"></div>
+                </div>
+                <div id="card-info" class="hidden">
+                    <h3>Pagamento com Cartão</h3>
+                    <form id="card-form">
+                        <div class="form-group">
+                            <label for="card-number">Número do Cartão</label>
+                            <input type="text" class="form-control" id="card-number" placeholder="Número do Cartão" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-expiry">Data de Expiração</label>
+                            <input type="text" class="form-control" id="card-expiry" placeholder="MM/AA" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-cvc">Código de Segurança</label>
+                            <input type="text" class="form-control" id="card-cvc" placeholder="CVC" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Pagar</button>
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="contato" class="rodape">
+            <h3>Contato</h3>
+            <p>Endereço: Rua das Águas, 456 - Cuiabá, MT</p>
+            <p>Telefone: (65) 1234-5678</p>
+            <p>Email: contato@ditolambari.com.br</p>
+        </section>
+
+        <footer class="rodape">
+            <p>Dito Lambari &copy; 2024</p>
+        </footer>
+
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+        <script src="botao.js"></script>
+        <script>
+        $(document).ready(function() {
+            // Exibe o valor total
+            const totalAmount = localStorage.getItem('totalPrice');
+            $('#total-amount').text(`Total a pagar: R$ ${totalAmount}`);
+
+            $('#pix-btn').on('click', function() {
+                $('#card-info').addClass('hidden');
+                $('#pix-info').removeClass('hidden');
+                generateQRCode('Pagamento via PIX - Chave: 00020126360014br.gov.bcb.pix0114+55659847174995204000053039865802BR5925KEREN HAPUQUE DE PINHO OR6009Sao Paulo62070503***6304C6EC');
+            });
+
+            $('#card-btn').on('click', function() {
+                $('#pix-info').addClass('hidden');
+                $('#card-info').removeClass('hidden');
+            });
+
+            function generateQRCode(text) {
+                // Limpar QR code existente
+                $('#qrcode').empty();
+                
+                // Gerar novo QR code
+                var qr = qrcode(0, 'L');
+                qr.addData(text);
+                qr.make();
+                $('#qrcode').html(qr.createImgTag());
+            }
+        });
+        </script>   
+    </body>
 </html>

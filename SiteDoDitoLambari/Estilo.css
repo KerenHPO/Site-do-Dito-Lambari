@@ -1,23 +1,21 @@
 /* Estilos Globais */
-html {
+* {
     scroll-behavior: smooth; /* Define uma rolagem suave na página */
-}
-
-body {
     font-family: 'Georgia', serif; /* Define a fonte padrão do site */
     margin: 0; /* Remove as margens padrão do body */
     padding: 0; /* Remove o padding padrão do body */
-    background-color: #04a5d6; /* Define a cor de fundo da página */
-    margin-top: 100px; /* Ajuste conforme a altura do cabeçalho */
+}
+html {
+    background-color: #0bb1e4;
 }
 
 /* Cabeçalho */
 .topo {
-    background-color: #04a5d6; /* Define a cor de fundo do cabeçalho */
-    color: #000000; /* Define a cor do texto no cabeçalho */
-    padding: 15px; /* Adiciona espaçamento interno ao cabeçalho */
-    display: flex; /* Usa flexbox para alinhar o conteúdo do cabeçalho */
-    justify-content: space-between; /* Distribui os itens igualmente no espaço disponível */
+   /*  background-color: #04a5d6; /* Define a cor de fundo do cabeçalho */
+    /* color: #ffffff; /* Define a cor do texto no cabeçalho */
+    /*padding: 15px; /* Adiciona espaçamento interno ao cabeçalho 
+    display: flex; /* Usa flexbox para alinhar o conteúdo do cabeçalho 
+    justify-content: space-between; /* Distribui os itens igualmente no espaço disponível 
     align-items: center; /* Alinha os itens ao centro verticalmente */
     box-shadow: 0 4px 8px 0 rgba(0, 27, 43, 0.247); /* Adiciona uma sombra ao cabeçalho */
     position: fixed; /* Define o elemento como fixo na tela, mantendo-o visível ao rolar a página */
@@ -26,38 +24,25 @@ body {
     z-index: 1000;/* Define a camada de sobreposição do elemento, garantindo que ele fique acima de outros elementos com valores de z-index menores */
 }
 
-.logo h1 {
-    font-size: 2.5em; /* Define o tamanho da fonte do título da logo */
-    margin: 0; /* Remove a margem do título da logo */
-    text-align: left; /* Alinha o texto da logo à esquerda */
+.navbar-customizado {
+    background-color: #04a5d6; /*cor de fundo do cabeçalho*/
 }
 
-.logo p {
-    margin: 0; /* Remove a margem do parágrafo da logo */
-    font-style: italic; /* Define o estilo do texto como itálico */
-    font-size: 1.3em; /* Define o tamanho da fonte do parágrafo da logo */
+/* Personalize a cor dos links no cabeçalho */
+.navbar-customizado .nav-link {
+    color: #000000; /*  */
 }
 
-nav ul {
-    list-style-type: none; /* Remove os marcadores de lista padrão */
-    display: flex; /* Usa flexbox para organizar os itens da lista */
+/* Mude a cor dos links ao passar o mouse */
+.navbar-customizado .nav-link:hover {
+    color: #dbecff; 
 }
 
-nav ul li {
-    margin: 0 30px; /* Adiciona margem à esquerda e à direita dos itens da lista */
-}
-
-nav ul li a {
-    color: #000000; /* Define a cor do texto dos links de navegação */
-    text-decoration: none; /* Remove a sublinha dos links */
-    font-weight: bold; /* Define o texto dos links como negrito */
-    font-size: 1.5rem; /* Define o tamanho da fonte dos links */
-}
 
 /* Seção de Destaque */
 .destaque {
     position: relative; /* Define a posição relativa para usar posicionamento absoluto dos filhos */
-    height: 700px; /* Define a altura da seção de destaque */
+    height: 900px; /* Define a altura da seção de destaque*/
     background: url('Fundo.png') no-repeat center center; /* Define a imagem de fundo centralizada */
     background-size: cover; /* Faz a imagem cobrir toda a área da seção */
     
@@ -83,10 +68,10 @@ nav ul li a {
     margin: 0; /* Remove a margem do título */
 }
 
-/* Seção do Cardápio */
+/******** Seção do Cardápio *********/
 .cardapio {
     padding: 50px 20px; /* Define o espaçamento interno da seção do cardápio */
-    background-color: #04a5d6; /* Define a cor de fundo da seção do cardápio */
+    background-color: #0bb1e4; /* Define a cor de fundo da seção do cardápio */
     text-align: center; /* Centraliza o texto dentro da seção do cardápio */
 }
 
@@ -113,11 +98,11 @@ nav ul li a {
 .prato {
     flex: 0 0 250px; /* Define uma largura fixa para cada prato */
     margin-right: 20px; /* Adiciona espaçamento à direita de cada prato */
-    background-color: #fff; /* Define a cor de fundo dos pratos */
-    border: 1px solid #ddd; /* Adiciona uma borda fina aos pratos */
+    background-color: #e3faff; /* Define a cor de fundo dos pratos */
+    border: 1px solid #86e1f6; /* Adiciona uma borda fina aos pratos */
     border-radius: 8px; /* Define bordas arredondadas nos pratos */
     padding: 15px; /* Adiciona espaçamento interno aos pratos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra aos pratos */
+    box-shadow: 4px 4px 8px 8px rgba(0, 21, 53, 0.349); /* Adiciona sombra aos pratos */
     text-align: center; /* Centraliza o texto dentro dos pratos */
     transition: transform 0.3s; /* Define uma transição suave ao passar o mouse */
 }
@@ -131,12 +116,12 @@ nav ul li a {
 .prato h3 {
     font-size: 1.8rem; /* Define o tamanho da fonte do título do prato */
     margin-bottom: 10px; /* Adiciona espaçamento abaixo do título do prato */
-    color: #2c3e50; /* Define a cor do título do prato */
+    color: #0c2e51; /* Define a cor do título do prato */
 }
 
 .prato p {
     font-size: 1rem; /* Define o tamanho da fonte da descrição do prato */
-    color: #777; /* Define a cor da descrição do prato */
+    color: #5b76a2; /* Define a cor da descrição do prato */
     margin-bottom: 15px; /* Adiciona espaçamento abaixo da descrição do prato */
 }
 
@@ -146,12 +131,12 @@ nav ul li a {
 
 /* Botão "Adicionar ao Carrinho" */
 .prato button {
-    background-color: #2c3e50; /* Define a cor de fundo do botão */
-    color: #ecf0f1; /* Define a cor do texto do botão */
+    background-color: #0c2e51; /* Define a cor de fundo do botão */
+    color: #d6f7ff; /* Define a cor do texto do botão */
     border: none; /* Remove a borda padrão do botão */
     padding: 10px 20px; /* Adiciona espaçamento interno ao botão */
     font-size: 1rem; /* Define o tamanho da fonte do botão */
-    border-radius: 5px; /* Define bordas arredondadas no botão */
+    border-radius: 7px; /* Define bordas arredondadas no botão */
     cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
     transition: background-color 0.3s; /* Define uma transição suave para a cor de fundo ao passar o mouse */
 }
@@ -166,8 +151,8 @@ nav ul li a {
     position: absolute; /* Define a posição absoluta dentro do contêiner */
     top: 50%; /* Posiciona o botão verticalmente no meio */
     transform: translateY(-50%); /* Centraliza o botão verticalmente */
-    background-color: #2c3e50; /* Define a cor de fundo do botão */
-    color: #ecf0f1; /* Define a cor do texto do botão */
+    background-color: #0c2e51; /* Define a cor de fundo do botão */
+    color: #e7faff; /* Define a cor do texto do botão */
     border: none; /* Remove a borda padrão do botão */
     padding: 10px; /* Adiciona espaçamento interno */
     cursor: pointer; /* Define o cursor como ponteiro ao passar sobre o botão */
@@ -184,12 +169,12 @@ nav ul li a {
 
 .left-nav {
     /* Define o posicionamento do botão de navegação à esquerda */
-    left: 10px; /* Posiciona o botão 10px da borda esquerda */
+    left: 5px; /* Posiciona o botão 10px da borda esquerda */
 }
 
 .right-nav {
     /* Define o posicionamento do botão de navegação à direita */
-    right: 10px; /* Posiciona o botão 10px da borda direita */
+    right: 5px; /* Posiciona o botão 10px da borda direita */
 }
 
 /* Oculta a barra de rolagem horizontal */
@@ -197,45 +182,48 @@ nav ul li a {
     display: none; /* Oculta a barra de rolagem */
 }
 
+/***************/
+
 /* Seção do Carrinho de Compras */
+
 .carrinho {
     /* Define o estilo da seção do carrinho de compras */
     padding: 30px 20px; /* Adiciona espaçamento interno */
     text-align: center; /* Alinha o texto ao centro */
-    background-color: #ffffff; /* Define a cor de fundo da seção */
-    border-top: 1px solid #ddd; /* Adiciona borda superior */
-    margin-top: 40px; /* Adiciona margem superior */
+    background-color: #0bb1e4; /* Define a cor de fundo da seção */
+    border-top: 1px solid #66d9ff; /* Adiciona borda superior */
+    /* margin-top: 40px; /* Adiciona margem superior */
 }
 
 .carrinho h3 {
-    /* Define o tamanho da fonte e a cor do título do carrinho */
-    font-size: 2rem; /* Define o tamanho da fonte do título */
-    margin-bottom: 20px; /* Adiciona margem abaixo do título */
-    color: #23598f; /* Define a cor do título */
+/* Define o tamanho da fonte e a cor do título do carrinho */
+font-size: 2rem; /* Define o tamanho da fonte do título */
+margin-bottom: 20px; /* Adiciona margem abaixo do título */
+color: #040041; /* Define a cor do título */
 }
 
 .carrinho ul {
-    /* Define o estilo da lista de itens no carrinho */
-    list-style: none; /* Remove os marcadores da lista */
-    padding: 0; /* Remove o padding padrão */
-    margin-bottom: 20px; /* Adiciona margem abaixo da lista */
+/* Define o estilo da lista de itens no carrinho */
+list-style: none; /* Remove os marcadores da lista */
+padding: 0; /* Remove o padding padrão */
+margin-bottom: 20px; /* Adiciona margem abaixo da lista */
 }
 
 .carrinho ul li {
-    /* Define o tamanho da fonte e a margem dos itens do carrinho */
-    font-size: 1.1rem; /* Define o tamanho da fonte dos itens */
-    margin-bottom: 10px; /* Adiciona margem abaixo dos itens */
+/* Define o tamanho da fonte e a margem dos itens do carrinho */
+font-size: 1.1rem; /* Define o tamanho da fonte dos itens */
+margin-bottom: 10px; /* Adiciona margem abaixo dos itens */
 }
 
 .carrinho p {
-    /* Define o tamanho da fonte e o peso do texto total do carrinho */
-    font-size: 1.2rem; /* Define o tamanho da fonte do total */
-    font-weight: bold; /* Define o texto em negrito */
+/* Define o tamanho da fonte e o peso do texto total do carrinho */
+font-size: 1.2rem; /* Define o tamanho da fonte do total */
+font-weight: bold; /* Define o texto em negrito */
 }
 
 .carrinho button {
     /* Define o estilo dos botões do carrinho */
-    background-color: #1c4064; /* Define a cor de fundo do botão */
+    background-color: #0c2e51; /* Define a cor de fundo do botão */
     color: #ecf0f1; /* Define a cor do texto do botão */
     border: none; /* Remove a borda padrão do botão */
     padding: 10px 20px; /* Adiciona espaçamento interno */
@@ -243,11 +231,12 @@ nav ul li a {
     border-radius: 5px; /* Define bordas arredondadas */
     cursor: pointer; /* Define o cursor como ponteiro ao passar sobre o botão */
     transition: background-color 0.3s; /* Define a transição suave para a cor de fundo */
+    margin: 1px; /*margem para separar os botões*/
 }
 
 .carrinho button:hover {
     /* Define o estilo do botão ao passar o mouse */
-    background-color: #f39c12; /* Altera a cor de fundo ao passar o mouse */
+    background-color: #1299f3; /* Altera a cor de fundo ao passar o mouse */
 }
 
 /* Rodapé */
@@ -257,7 +246,7 @@ nav ul li a {
     padding: 20px; /* Adiciona espaçamento interno */
     background-color: #006f91; /* Define a cor de fundo do rodapé */
     color: #ecf0f1; /* Define a cor do texto no rodapé */
-    margin-top: 40px; /* Adiciona margem superior */
+     /* Adiciona margem superior */
 }
 
 /* Responsividade */
@@ -273,4 +262,66 @@ nav ul li a {
         /* Define o layout vertical para os pratos em telas pequenas */
         flex-direction: column; /* Alinha os pratos verticalmente */
     }
+}
+
+/* Pedidos*/
+.payment-section { padding: 20px; }
+.hidden { display: none; }
+#qrcode img { max-width: 100%; }
+
+.pedido {
+    /* Define o estilo da seção do carrinho de compras */
+    padding: 30px 20px 325px; /* Adiciona espaçamento interno */
+    text-align: justify; /* Alinha o texto ao centro */
+    background-color: #dcf7ff; /* Define a cor de fundo da seção */
+    border-top: 1px solid #66d9ff; /* Adiciona borda superior */
+    margin-top: 120px; /* Adiciona margem superior */
+}
+
+.pedido button {
+    /* Define o estilo dos botões do carrinho */
+    background-color: #001562; /* Define a cor de fundo do botão */
+    color: #ecf0f1; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    font-size: 1rem; /* Define o tamanho da fonte do botão */
+    border-radius: 5px; /* Define bordas arredondadas */
+    cursor: pointer; /* Define o cursor como ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s; /* Define a transição suave para a cor de fundo */
+    margin: 1px; /*margem para separar os botões*/
+}
+
+.pedido button:hover {
+    /* Define o estilo do botão ao passar o mouse */
+    background-color: #1299f3; /* Altera a cor de fundo ao passar o mouse */
+}
+
+/****     ****/
+
+/*sobre nós*/
+.about-section {
+    margin-top: 120px;
+    padding: 50px 20px;
+    background-color: #ecf6ff;
+}
+.about-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+.about-section .team-member {
+    margin-bottom: 30px;
+}
+.about-section .team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+.about-section .team-member h4 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+.about-section .team-member p {
+    color: #6c757d;
+    text-align: justify;
 }
